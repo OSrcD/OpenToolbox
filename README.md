@@ -44,6 +44,11 @@ vim打开文件无法显示内容问题：
 改变窗口的宽度大小
 1225px（像素）
 
+编辑器无法输入中文问题
+用sudo命令打开应用
+sudo open build/terminal-darwin-x64/terminal.app
+或sudo open /Applications/Terminal.app
+
 ```
 
 ---

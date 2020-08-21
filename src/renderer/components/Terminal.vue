@@ -94,9 +94,18 @@ export default {
         this.xterm.open(document.getElementById('xterm')); 
         this.fitAddon.fit();
         this.ptyProcess.write('clear\r');
-        this.xterm.onData(send => {this.ptyProcess.write(send);});
+        this.xterm.onData(send => {
+
+            this.ptyProcess.write(send);
+
+    
+            });
         
-        this.ptyProcess.onData(recv => {this.xterm.write(recv);});
+        this.ptyProcess.onData(recv => {
+            
+            this.xterm.write(recv);
+
+            });
 
      
 
