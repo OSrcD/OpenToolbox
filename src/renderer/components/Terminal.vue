@@ -34,6 +34,7 @@ import { Terminal } from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
 const { remote } = require('electron')
 import background from '@/assets/background.png'
+import { send } from 'process';
 
 export default {
     name: 'Terminal',
@@ -62,8 +63,9 @@ export default {
         this.shell = process.env[os.platform() === 'win32' ? 'COMSPEC' : 'SHELL'];
         this.ptyProcess = pty.spawn(this.shell,[],{
             name: 'xterm-color',
-            
-            cwd: process.cwd(),
+            cols: 80,
+            rows: 30,
+            cwd: process.env.HOME,
             env: process.env
         });
         this.ptyProcess.write('source ~/.bash_profile\r');
@@ -92,12 +94,9 @@ export default {
         this.xterm.open(document.getElementById('xterm')); 
         this.fitAddon.fit();
         this.ptyProcess.write('clear\r');
-        this.xterm.onData(data => this.ptyProcess.write(data));
+        this.xterm.onData(send => {this.ptyProcess.write(send);});
         
-        this.ptyProcess.on('data',function(data){
-             that.xterm.write(data)
-             
-        })
+        this.ptyProcess.onData(recv => {this.xterm.write(recv);});
 
      
 
@@ -120,7 +119,7 @@ export default {
         
        this.initializeTerminal();
        remote.getCurrentWindow().setSize(858, 481)
-
+        
        
     }
 
