@@ -22,11 +22,6 @@ sudo yarn run build
 
 sudo open build/Terminal-darwin-x64/Terminal.app/
 
-
-```
-
----
-
 中文乱码问题：
 在vim ~/.bash_profile添加以下配置
 export LANG="zh_CN.UTF-8"
@@ -48,3 +43,8 @@ LC_ALL=
 vim打开文件无法显示内容问题：
 改变窗口的宽度大小
 1225px（像素）
+
+```
+
+---
+
