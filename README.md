@@ -1,5 +1,6 @@
 # terminal
-
+![image](https://github.com/OpenSrcDeveloper/terminal/blob/master/static/TerminalDemo01.png)
+![image](https://github.com/OpenSrcDeveloper/terminal/blob/master/static/TerminalDemo02.png)
 #### Build Setup
 
 ``` bash
@@ -41,8 +42,7 @@ LC_IDENTIFICATION="zh_CN.UTF-8"
 LC_ALL=
 
 # vim打开文件无法显示内容问题：
-改变窗口的宽度大小
-1225px（像素）
+改变窗口的宽度大小或高度大小或字体大小
 
 # 编辑器无法输入中文问题
 用sudo命令打开应用
