@@ -13,7 +13,17 @@
 
 <style>
   /* CSS */
-  #app{
+  
+
+   
+  body,html,#app{
+    margin: 0;
+    padding: 0;
     height: 100%;
+    width: 100%;
+    background-color: black;
+  }
+  ::-webkit-scrollbar{
+    display: none;
   }
 </style>

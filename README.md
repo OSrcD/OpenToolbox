@@ -47,7 +47,7 @@ LC_MEASUREMENT="zh_CN.UTF-8"
 LC_IDENTIFICATION="zh_CN.UTF-8"
 LC_ALL=
 
-# vim打开文件无法显示内容问题：
+# vim打开文件无法显示内容问题（已修复）：
 改变窗口的宽度大小或高度大小或字体大小
 
 # 编辑器无法输入中文问题
@@ -55,16 +55,21 @@ LC_ALL=
 sudo open build/terminal-darwin-x64/terminal.app
 或sudo open /Applications/Terminal.app
 
-
-
 # 未修复的BUG
+
+# 已修复的BUG
 1、当窗口宽度小于1219px时或改变字体大小，用Vim打开有内容的文件会出现空白现象，
-也可能还与高度有关，所以窗口默认设置了宽度为1219px大小，改变窗口大小还会引起出
+也可能还与高度有关，改变窗口大小还会引起出
 现输入文字偏移位置不正确的情况。
+
+# 待增功能
+1、自定义黑色的标题栏，不要系统自带的标题栏
+2、增加hacker工具箱
+3、爬虫、爬取最新的网络安全新闻显示到GUI
 
 ```
 
 ---
 
 提供Mac OS X 编译好的二进制文件下载
-链接:<https://pan.baidu.com/s/1dR9lnAMYp-vGYFPPuj2N3A> 密码:upjt
+链接:<https://pan.baidu.com/s/1K_YYmQxHw_CDtS0Qj7cCzg> 密码:yncu

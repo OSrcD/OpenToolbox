@@ -14,9 +14,9 @@ const winURL = process.env.NODE_ENV === 'development'
  */
 function createWindow () {
   mainWindow = new BrowserWindow({
-    height: 750, // 窗口高度
+    height: 568, // 窗口高度
     useContentSize: true,
-    width: 1219, // 窗口宽度
+    width: 905, // 窗口宽度
     center: true, // 窗口居中
     webPreferences:{
       nodeIntegration: true, // 集成node框架

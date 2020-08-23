@@ -4,7 +4,8 @@
 
 <style scoped>
     #xterm{
-        margin-left: 8.2px;
+      
+        margin-left: 8.6px;
         height: 100%;
         width: 100%;
         background: no-repeat center;
@@ -43,17 +44,7 @@ export default {
          */
         initializeTerminal: function(){
             
-            /**
-             * 初始化node-pty
-             */
-            this.shell = process.env[os.platform() === 'win32' ? 'COMSPEC' : 'SHELL'];
-            this.ptyProcess = pty.spawn(this.shell,[],{
-                cwd: process.env.HOME,
-                env: process.env
-            });
             
-            // 写命令
-            this.ptyProcess.write('source ~/.bash_profile\r');
 
             const that = this;
 
@@ -82,6 +73,21 @@ export default {
             this.xterm.loadAddon(this.fitAddon);
             this.xterm.open(document.getElementById('xterm')); 
             this.fitAddon.fit();
+
+            /**
+             * 初始化node-pty
+             */
+            this.shell = process.env[os.platform() === 'win32' ? 'COMSPEC' : 'SHELL'];
+            this.ptyProcess = pty.spawn(this.shell,[],{
+                rows: that.xterm.rows || 80,
+                cols: that.xterm.cols || 24,
+                cwd: process.env.HOME,
+                env: process.env,
+                encoding: 'utf8'
+            });
+            
+            // 写命令
+            this.ptyProcess.write('source ~/.bash_profile\r');
 
 
             this.ptyProcess.write('clear\r');
@@ -117,8 +123,15 @@ export default {
             
             function resizeScreen(){
                 that.fitAddon.fit();
+               
             }
 
+            /**
+             * xterm大小发生改变，node-pty的大小要同步改变
+             */
+            this.xterm.onResize((size) => {    
+                that.ptyProcess.resize(size.cols,size.rows);
+            })
         
         }
         
@@ -127,7 +140,7 @@ export default {
     mounted(){
         
        this.initializeTerminal();
-       remote.getCurrentWindow().setSize(1219, 750);
+       remote.getCurrentWindow().setSize(905, 568);
       
        
     }
