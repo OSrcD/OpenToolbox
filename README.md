@@ -4,6 +4,7 @@
 全屏效果
 ![image](https://github.com/OpenSrcDeveloper/terminal/blob/master/static/TerminalDemo02.png)
 背景图片来自于Anonymous-OS
+<br />
 ![image](https://github.com/OpenSrcDeveloper/terminal/blob/master/static/Anonymous-OS.png)
 #### Build Setup
 
@@ -53,8 +54,7 @@ LC_ALL=
 sudo open build/terminal-darwin-x64/terminal.app
 或sudo open /Applications/Terminal.app
 
-# 提供Mac OS X 编译好的二进制文件下载
-[链接:](https://pan.baidu.com/s/14kqyykGGkduZSXGP_tA26Q)  密码:vlo6
+
 
 # 未修复的BUG
 1、当窗口宽度小于1219px时或改变字体大小，用Vim打开有内容的文件会出现空白现象，
@@ -65,3 +65,5 @@ sudo open build/terminal-darwin-x64/terminal.app
 
 ---
 
+提供Mac OS X 编译好的二进制文件下载
+链接:<https://pan.baidu.com/s/1dR9lnAMYp-vGYFPPuj2N3A> 密码:upjt

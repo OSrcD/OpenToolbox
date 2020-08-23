@@ -67,7 +67,7 @@ export default {
                 theme: {
                     
                     foreground:'lightgray', // 前景色
-                    background: "#0000", // 背景色
+                    background: "#0004", // 背景色
                 
                 
                 },
