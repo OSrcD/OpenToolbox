@@ -6,6 +6,7 @@
 背景图片来自于Anonymous-OS
 <br />
 ![image](https://github.com/OpenSrcDeveloper/terminal/blob/master/static/Anonymous-OS.png)
+
 #### Build Setup
 
 ``` bash
