@@ -7,7 +7,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'landing-page',
+      name: 'Terminal',
       component: require('@/components/Terminal').default
     },
     {

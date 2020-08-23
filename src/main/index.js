@@ -1,12 +1,5 @@
-import { app, BrowserWindow, screen } from 'electron'
+import { app, BrowserWindow} from 'electron'
 
-
-
-
-/**
- * Set `__static` path to static files in production
- * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
- */
 if (process.env.NODE_ENV !== 'development') {
   global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
@@ -16,42 +9,44 @@ const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
 
+/**
+ * 实例化一个窗口
+ */
 function createWindow () {
-  /**
-   * Initial window options
-   */
   mainWindow = new BrowserWindow({
-    height: 480,
+    height: 750, // 窗口高度
     useContentSize: true,
-    width: 857,
+    width: 1215, // 窗口宽度
+    center: true, // 窗口居中
     webPreferences:{
-      nodeIntegration: true,
-      enableRemoteModule: true
+      nodeIntegration: true, // 集成node框架
+      enableRemoteModule: true 
     },
-    transparent: true,
-    frame: false,
- 
-   
     
-   
+    
+ 
   })
-  mainWindow.setAlwaysOnTop(true);
-  mainWindow.setPosition(screen.getPrimaryDisplay().workAreaSize.width-857-63,63,true);
+
+  // 窗口居中
+
+ 
+  // 关闭开发者工具
+  mainWindow.webContents.closeDevTools() 
+ 
+
+  // 调用appProperties函数
   appProperties();
+
+  // 加载index.html文件
   mainWindow.loadURL(winURL)
   
   mainWindow.on('closed', () => {
     mainWindow = null
   })
 
-  
-  mainWindow.webContents.openDevTools({mode:'undocked'})
-  
-  
-
-  
 }
 
+  
 app.on('ready', createWindow)
 
 app.on('window-all-closed', () => {
@@ -68,11 +63,10 @@ app.on('activate', () => {
   }
 })
 
-
+/**
+ * 开启渲染进程调用本地API
+ */
 function appProperties (){
   app.allowRendererProcessReuse = false;
 }
-
-
-
 

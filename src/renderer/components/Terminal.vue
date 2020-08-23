@@ -1,26 +1,15 @@
-<template>
-
-        
-    <div id="xterm" :style="{backgroundImage: 'url(' + background + ')'} "></div>
-       
-
+<template>   
+    <div id="xterm" :style="{backgroundImage: 'url(' + background + ')'} "></div> 
 </template>
 
 <style scoped>
     #xterm{
-        
-        
-        margin-left: 4.7px;
+        margin-left: 8.2px;
         height: 100%;
         width: 100%;
         background: no-repeat center;
         background-size: contain;
     }
-
-    
-    
-
-    
 
 </style>
   
@@ -28,25 +17,14 @@
 
 const os = require('os');
 const pty = require('node-pty');
-
-import { Terminal } from 'xterm';
-
-import { FitAddon } from 'xterm-addon-fit';
 const { remote } = require('electron')
+import { Terminal } from 'xterm';
+import { FitAddon } from 'xterm-addon-fit';
 import background from '@/assets/background.png'
-import { send } from 'process';
+
 
 export default {
     name: 'Terminal',
-
-    props: {
-        terminalProperties: {
-            type: Object,
-            default: function(){
-                return {}
-            }
-        }
-    },
 
     data(){
         return{
@@ -59,83 +37,103 @@ export default {
     },
 
     methods: {
+
+        /**
+         * 初始化Terminal终端
+         */
         initializeTerminal: function(){
-        this.shell = process.env[os.platform() === 'win32' ? 'COMSPEC' : 'SHELL'];
-        this.ptyProcess = pty.spawn(this.shell,[],{
-            name: 'xterm-color',
-            cols: 80,
-            rows: 30,
-            cwd: process.env.HOME,
-            env: process.env
-        });
-        this.ptyProcess.write('source ~/.bash_profile\r');
-        const that = this;
-        this.xterm = new Terminal({
             
+            /**
+             * 初始化node-pty
+             */
+            this.shell = process.env[os.platform() === 'win32' ? 'COMSPEC' : 'SHELL'];
+            this.ptyProcess = pty.spawn(this.shell,[],{
+                cwd: process.env.HOME,
+                env: process.env
+            });
             
-            
-            
-            cursorBlink: true, //光标闪烁
-            fontSize: 25,
-            
-            theme: {
+            // 写命令
+            this.ptyProcess.write('source ~/.bash_profile\r');
+
+            const that = this;
+
+            /**
+             * 初始化xterm
+             */
+            this.xterm = new Terminal({
                 
-                foreground:'white',
-                background: "#0000",
-               
+                cursorBlink: true, // 光标闪烁
+                fontSize: 26, // 字体大小 
+                theme: {
+                    
+                    foreground:'lightgray', // 前景色
+                    background: "#0000", // 背景色
+                
+                
+                },
+                allowTransparency: true // 开启透明
+                
+            });
+            
+            /**
+             * 使用自适应宽度、高度插件并把终端挂载在名为xterm元素上
+             */
+            this.fitAddon = new FitAddon();
+            this.xterm.loadAddon(this.fitAddon);
+            this.xterm.open(document.getElementById('xterm')); 
+            this.fitAddon.fit();
+
+
+            this.ptyProcess.write('clear\r');
+
+            /**
+             * xterm监听键盘数据
+             */
+            this.xterm.onData(send => {
+
+                // 向node-pty发送数据
+                this.ptyProcess.write(send);
+
+                });
+            
+            /**
+             * node-pty监听xterm发送过来数据
+             */
+            this.ptyProcess.onData(recv => {
+                
+                /**
+                 * 回显数据给xterm
+                 */
+                this.xterm.write(recv);
              
-            },
-            allowTransparency: true
-            
-        });
+                });
+
         
-        this.fitAddon = new FitAddon();
-        this.xterm.loadAddon(this.fitAddon);
-        this.xterm.open(document.getElementById('xterm')); 
-        this.fitAddon.fit();
-        this.ptyProcess.write('clear\r');
-        this.xterm.onData(send => {
+            /**
+             * 监听窗口大小发生改变，重新调用插件，以适应父容器的宽和高
+             */
+            window.addEventListener("resize", resizeScreen);
 
-            this.ptyProcess.write(send);
-
-    
-            });
-        
-        this.ptyProcess.onData(recv => {
             
-            this.xterm.write(recv);
-
-            });
-
-     
-
-        window.addEventListener("resize", resizeScreen);
-
-        function resizeScreen(){
-           
-            that.fitAddon.fit();
-        }
+            function resizeScreen(){
+                that.fitAddon.fit();
+            }
 
         
         }
         
     },
 
-
-
-
     mounted(){
         
        this.initializeTerminal();
-       remote.getCurrentWindow().setSize(858, 481)
-        
+       remote.getCurrentWindow().setSize(1215, 750);
+      
        
     }
 
 
 
 }
-
-
 
 </script>
