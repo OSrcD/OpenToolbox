@@ -59,7 +59,7 @@ sudo open build/terminal-darwin-x64/terminal.app
 现输入文字偏移位置不正确的情况。
 
 ```
-# 提供Mac OS X 编译好的二进制文件下载
-链接:<https://pan.baidu.com/s/1MNO4yQEW1nKoOxOVPWufyw> 密码:lgzt
 ---
+提供Mac OS X 编译好的二进制文件下载
+链接:<https://pan.baidu.com/s/1MNO4yQEW1nKoOxOVPWufyw> 密码:lgzt
 
