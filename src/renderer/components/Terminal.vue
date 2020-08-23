@@ -127,7 +127,7 @@ export default {
     mounted(){
         
        this.initializeTerminal();
-       remote.getCurrentWindow().setSize(1215, 750);
+       remote.getCurrentWindow().setSize(1219, 750);
       
        
     }

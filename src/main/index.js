@@ -16,7 +16,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 750, // 窗口高度
     useContentSize: true,
-    width: 1215, // 窗口宽度
+    width: 1219, // 窗口宽度
     center: true, // 窗口居中
     webPreferences:{
       nodeIntegration: true, // 集成node框架
