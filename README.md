@@ -69,7 +69,7 @@ sudo open build/terminal-darwin-x64/terminal.app
 4、待添Hacker学习路线、hacking指令搜索
 
 # 2020-8-25
-1、原项目名为Terminal改名为OpenToolbox（开源工具箱)ssssaww
+1、原项目名为Terminal改名为OpenToolbox（开源工具箱)
 ```
 
 ---
