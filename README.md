@@ -1,4 +1,4 @@
-# terminal
+# OpenToolbox
 默认效果
 ![image](https://github.com/OpenSrcDeveloper/terminal/blob/master/static/TerminalDemo01.png)
 全屏效果
@@ -67,6 +67,8 @@ sudo open build/terminal-darwin-x64/terminal.app
 2、增加hacker工具箱
 3、爬虫、爬取最新的网络安全新闻显示到GUI
 
+# 2020-8-25
+1，源项目称为Terminal改称为OpenToolbox（开源工具箱)
 ```
 
 ---
