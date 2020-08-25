@@ -66,9 +66,10 @@ sudo open build/terminal-darwin-x64/terminal.app
 1、自定义黑色的标题栏，不要系统自带的标题栏
 2、增加hacker工具箱
 3、爬虫、爬取最新的网络安全新闻显示到GUI
+4、待添Hacker学习路线、hacking指令搜索
 
 # 2020-8-25
-1，源项目称为Terminal改称为OpenToolbox（开源工具箱)
+1、原项目名为Terminal改名为OpenToolbox（开源工具箱)ssssaww
 ```
 
 ---
