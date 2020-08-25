@@ -1,4 +1,4 @@
-# OpenToolbox
+# OpenToolbox（OpenSourceToolbox）
 默认效果
 ![image](https://github.com/OpenSrcDeveloper/terminal/blob/master/static/TerminalDemo01.png)
 全屏效果
