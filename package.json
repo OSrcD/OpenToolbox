@@ -1,6 +1,6 @@
 {
   "name": "terminal",
-  "productName": "Terminal",
+  "productName": "OpenToolbox",
   "version": "0.0.1",
   "author": "OpenSrcDeveloper <OpenDeveloper@mywiz.cn>",
   "description": "An electron-vue project",
