@@ -27,9 +27,11 @@ sudo cnpm install -g yarn
 sudo sh npm_install.sh
 
 #### 运行
+
 sudo yarn run dev
 
 #### 编译
+
 sudo yarn run build
 
 sudo open build/Terminal-darwin-x64/Terminal.app/
@@ -47,24 +49,36 @@ LC_CTYPE="zh_CN.UTF-8"
 LC_NUMERIC="zh_CN.UTF-8"
 
 LC_TIME="zh_CN.UTF-8"
+
 LC_COLLATE="zh_CN.UTF-8"
+
 LC_MONETARY="zh_CN.UTF-8"
+
 LC_MESSAGES="zh_CN.UTF-8"
+
 LC_PAPER="zh_CN.UTF-8"
+
 LC_NAME="zh_CN.UTF-8"
+
 LC_ADDRESS="zh_CN.UTF-8"
+
 LC_TELEPHONE="zh_CN.UTF-8"
+
 LC_MEASUREMENT="zh_CN.UTF-8"
+
 LC_IDENTIFICATION="zh_CN.UTF-8"
+
 LC_ALL=
 
 ### vim打开文件无法显示内容问题（已修复）：
+
 改变窗口的宽度大小或高度大小或字体大小
 
 ### 编辑器无法输入中文问题
+
 用sudo命令打开应用
-sudo open build/terminal-darwin-x64/terminal.app
-或sudo open /Applications/Terminal.app
+
+sudo open build/terminal-darwin-x64/terminal.app 或 sudo open /Applications/Terminal.app
 
 ### 未修复的BUG
 
