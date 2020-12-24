@@ -110,3 +110,8 @@ sudo open build/terminal-darwin-x64/terminal.app 或 sudo open /Applications/Ter
 ### 提供Mac OS X 编译好的二进制文件下载
 
 链接:<https://pan.baidu.com/s/1K_YYmQxHw_CDtS0Qj7cCzg> 密码:yncu
+
+### 微信赞赏码
+
+![image](https://github.com/OpenSrcDeveloper/java-for-linux/blob/master/image/赞赏码.png)
+
