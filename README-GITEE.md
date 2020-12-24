@@ -113,5 +113,6 @@ sudo open build/terminal-darwin-x64/terminal.app 或 sudo open /Applications/Ter
 
 ### 微信赞赏码
 
-![image](https://github.com/OpenSrcDeveloper/java-for-linux/blob/master/image/赞赏码.png)
+![image](https://gitee.com/OpenDevel/java-for-linux/raw/master/image/赞赏码.png)
+
 
