@@ -1,3 +1,5 @@
+# 项目已迁移到 [java-for-linux](https://gitee.com/OpenDevel/java-for-linux) 项目维护
+
 # 开源工具箱（Open Source Toolbox）
 
 ### 默认效果
